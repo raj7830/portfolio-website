@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="hero">
+        <h1>Hello, I'm {{ data.name }}</h1>
+        <h2>{{ data.title }}</h2>
+        <p>{{ data.about }}</p>
+        <a href="/projects" class="btn">View My Projects</a>
+    </section>
+{% endblock %}

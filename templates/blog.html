@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="blog">
+        <h1>My Blog</h1>
+        <div class="about-author">
+            <h2>About the Author</h2>
+            <p>{{ data.brief_description }}</p>
+        </div>
+        <h2>Posts</h2>
+        {% for post in data.blog_posts %}
+            <div class="blog-post">
+                <h3>{{ post.title }}</h3>
+                <p class="date">{{ post.date }}</p>
+                <p>{{ post.summary }}</p>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}

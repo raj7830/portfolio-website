@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="about">
+        <h1>About Me</h1>
+        <p>{{ data.about }}</p>
+        
+        <h2>Education</h2>
+        {% for edu in data.education %}
+            <div class="education-item">
+                <h3>{{ edu.degree }}</h3>
+                <p>{{ edu.institute }} ({{ edu.duration }}) 
+                {% if edu.cgpa %} - CGPA: {{ edu.cgpa }}{% endif %}</p>
+            </div>
+        {% endfor %}
+
+        <h2>Experience</h2>
+        {% for exp in data.experience %}
+            <div class="experience-item">
+                <h3>{{ exp.title }} - {{ exp.company }}</h3>
+                <p>{{ exp.location }} | {{ exp.duration }}</p>
+                <p>{{ exp.description }}</p>
+            </div>
+        {% endfor %}
+
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in data.skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Achievements</h2>
+        <ul>
+            {% for achievement in data.achievements %}
+                <li>{{ achievement }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Hobbies</h2>
+        <ul>
+            {% for hobby in data.hobbies %}
+                <li>{{ hobby }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
